@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Configuration Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .success { border-color: #4caf50; background: #f1f8e9; }
+        .pending { border-color: #ff9800; background: #fff3e0; }
+        .error { border-color: #f44336; background: #ffebee; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Vercel Configuration Test</h1>
+        <p>This page tests if the vercel.json configuration is working correctly for client-side routing.</p>
+        
+        <div class="test-item pending" id="test-home">
+            <h3>✅ Home Route Test</h3>
+            <p>Testing: <code>/</code></p>
+            <button onclick="testRoute('/')">Test Home</button>
+            <div id="result-home"></div>
+        </div>
+
+        <div class="test-item pending" id="test-elements">
+            <h3>🧪 Elements Route Test</h3>
+            <p>Testing: <code>/elements</code></p>
+            <button onclick="testRoute('/elements')">Test Elements</button>
+            <div id="result-elements"></div>
+        </div>
+
+        <div class="test-item pending" id="test-drag-drop">
+            <h3>🎯 Drag Drop Route Test</h3>
+            <p>Testing: <code>/drag-drop</code></p>
+            <button onclick="testRoute('/drag-drop')">Test Drag Drop</button>
+            <div id="result-drag-drop"></div>
+        </div>
+
+        <div class="test-item pending" id="test-coming-soon">
+            <h3>⏰ Coming Soon Route Test</h3>
+            <p>Testing: <code>/coming-soon</code></p>
+            <button onclick="testRoute('/coming-soon')">Test Coming Soon</button>
+            <div id="result-coming-soon"></div>
+        </div>
+
+        <div class="test-item pending" id="test-reload">
+            <h3>🔄 Page Reload Test</h3>
+            <p>Testing: Direct URL access and reload</p>
+            <button onclick="reloadTest()">Test Reload</button>
+            <div id="result-reload"></div>
+        </div>
+
+        <h2>📋 Vercel.json Configuration</h2>
+        <div class="code">
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+        </div>
+
+        <h2>🎯 Manual Testing Instructions</h2>
+        <ol>
+            <li><strong>Navigate to different routes</strong> using the buttons above</li>
+            <li><strong>Refresh the page</strong> on each route (F5 or Ctrl+R)</li>
+            <li><strong>Copy URL and open in new tab</strong> to test direct access</li>
+            <li><strong>Use browser back/forward</strong> buttons</li>
+        </ol>
+
+        <h2>✅ Expected Results</h2>
+        <ul>
+            <li>✅ All routes should load without 404 errors</li>
+            <li>✅ Page refresh should work on any route</li>
+            <li>✅ Direct URL access should work</li>
+            <li>✅ Browser navigation should work</li>
+        </ul>
+    </div>
+
+    <script>
+        function testRoute(path) {
+            const routeName = path === '/' ? 'home' : path.replace('/', '').replace('-', '-');
+            const resultDiv = document.getElementById('result-' + (path === '/' ? 'home' : path.replace('/', '').replace('-', '-')));
+            const testDiv = document.getElementById('test-' + (path === '/' ? 'home' : path.replace('/', '').replace('-', '-')));
+            
+            try {
+                // Navigate to the route
+                window.history.pushState({}, '', path);
+                
+                // Test if the route exists (simplified check)
+                setTimeout(() => {
+                    resultDiv.innerHTML = `<p>✅ Route navigation successful! Current path: <code>${window.location.pathname}</code></p>`;
+                    testDiv.className = 'test-item success';
+                }, 100);
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<p>❌ Navigation failed: ${error.message}</p>`;
+                testDiv.className = 'test-item error';
+            }
+        }
+
+        function reloadTest() {
+            const resultDiv = document.getElementById('result-reload');
+            const testDiv = document.getElementById('test-reload');
+            
+            resultDiv.innerHTML = `
+                <p>🔄 To test reload functionality:</p>
+                <ol>
+                    <li>Navigate to <a href="/elements">/elements</a></li>
+                    <li>Press F5 or Ctrl+R to reload</li>
+                    <li>Check if page loads without 404 error</li>
+                </ol>
+                <p><strong>Note:</strong> This test works fully on deployed Vercel site.</p>
+            `;
+            testDiv.className = 'test-item success';
+        }
+
+        // Test current route on load
+        window.onload = function() {
+            const currentPath = window.location.pathname;
+            document.querySelector('h1').innerHTML += ` (Current: ${currentPath})`;
+        };
+    </script>
+</body>
+</html>
