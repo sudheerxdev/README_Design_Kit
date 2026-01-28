@@ -9,11 +9,11 @@
   
 
   <div align="center">
-  <img src="https://img.shields.io/github/contributors/Mayur-Pagote/README_Design_Kit" alt="Contributors">
-  <img src="https://img.shields.io/github/forks/Mayur-Pagote/README_Design_Kit" alt="Forks">
-    <img src="https://img.shields.io/github/stars/Mayur-Pagote/README_Design_Kit?style=social" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/issues/Mayur-Pagote/README_Design_Kit" alt="Issues">
-  <img src="https://img.shields.io/github/issues-pr/Mayur-Pagote/README_Design_Kit" alt="Pull Requests">
+  <img src="https://img.shields.io/github/contributors/sudheerxdev/README_Design_Kit" alt="Contributors">
+  <img src="https://img.shields.io/github/forks/sudheerxdev/README_Design_Kit" alt="Forks">
+    <img src="https://img.shields.io/github/stars/sudheerxdev/README_Design_Kit?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/issues/sudheerxdev/README_Design_Kit" alt="Issues">
+  <img src="https://img.shields.io/github/issues-pr/sudheerxdev/README_Design_Kit" alt="Pull Requests">
 </div>
   
 </div>
