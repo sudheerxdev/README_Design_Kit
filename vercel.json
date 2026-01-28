@@ -1,10 +1,15 @@
 {
+  "framework": "other",
+  "buildCommand": "",
+  "outputDirectory": ".",
+
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
+
   "headers": [
     {
       "source": "/(.*)",
