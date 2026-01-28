@@ -96,5 +96,8 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
+  },
+  "scripts": {
+  "build": "echo \"static site – no build required\""
   }
 }
