@@ -35,7 +35,7 @@ Stop staring at blank markdown files. Start shipping documentation that develope
 Use a Complete Template
 ```bash
 # Clone the repository
-git clone https://github.com/Mayur-Pagote/README_Design_Kit.git
+git clone https://github.com/sudheerxdev/README_Design_Kit.git
 
 # Navigate to templates
 cd README_Design_Kit/templates
@@ -173,7 +173,6 @@ graph TD
 4. Test your template with a real project
 5. Submit a pull request
 
-Read the [Contributing Guidelines](./CONTRIBUTING.md) for detailed instructions.
 
 
 
@@ -208,24 +207,8 @@ This project is licensed under the **MIT License**. See [LICENSE](./LICENSE) for
 
 <div align="center">
   <p>
-    <strong>Mayur Pagote</strong><br>
-    <a href="https://github.com/Mayur-Pagote">GitHub</a> • 
-    <a href="https://www.linkedin.com/in/mayurpagote">LinkedIn</a>
+    <strong>Sudheer Yadav</strong><br>
+    <a href="https://github.com/sudheerxdev">GitHub</a> • 
+    <a href="https://www.linkedin.com/in/sudheercodec/">LinkedIn</a>
   </p>
-</div>
-
-
-
-
-## 🙏 Acknowledgments
-
-Special thanks to:
-- All contributors who've shared templates and improvements
-- The open-source community for inspiration and feedback
-
-
-
-<div align="center">
-  <p><strong>Made with ❤️ for developers who care about documentation</strong></p>
-  <p><sub>Because great code deserves great documentation</sub></p>
 </div>
